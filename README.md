@@ -11,7 +11,7 @@ A collection of all my turbowarp extensions.
   
 ## License
 
-**All Extensions** in this **Repository** uses the **MIT & LGPL-3.0 Licences**
+**All Extensions** in this **Repository** uses the **MPL 2.0 Licence**
 
 ## Issues
 If you have any, feel free to report it [here](https://github.com/CosmicOverflow/Cosmic-Extensions/issues)
