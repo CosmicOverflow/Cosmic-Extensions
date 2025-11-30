@@ -1,7 +1,7 @@
 // Name: Keys+ V3
 // ID: CosmicKeysPlusV3
 // Description: Even more powerful, flexible and optimized key sensing extension.
-// By: CosmicOverflow
+// By: CosmicOverflow <https://github.com/CosmicOverflow>
 // License: MPL-2.0
 
 // Future Update Plans:
@@ -9,6 +9,8 @@
 //   - Improve input system and overall handling of keys in multiple key input blocks.
 //   - Add a layout system for better compatibility for different keyboard layouts.
 //   - Key Logger.
+
+// Credits to Ender-Studio for creating Keys+ V1 & 2
 (function (Scratch) {
     "use strict";
 
