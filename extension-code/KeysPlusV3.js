@@ -2,7 +2,7 @@
 // ID: CosmicKeysPlusV3
 // Description: Even more powerful, flexible and optimized key sensing extension.
 // By: CosmicOverflow
-// License: MIT & LGPL-3.0
+// License: MPL-2.0
 
 // Future Update Plans:
 //   - Improve handling of 'any' and tags in multiple key input blocks.
