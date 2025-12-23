@@ -230,7 +230,7 @@
                     keyPressed.isTrulyPressed = true;
                 }
             } else {
-                this.keyValues[key] = attribs.key;
+                if (attribs) this.keyValues[key] = attribs.key;
 
                 const timeStarted = Date.now();
 
