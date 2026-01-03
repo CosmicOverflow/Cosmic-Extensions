@@ -9,6 +9,7 @@
 //   - Improve input system and overall handling of keys in multiple key input blocks.
 //   - Add a layout system for better compatibility for different keyboard layouts.
 //   - Key Logger.
+//   - Add 'toggle' mode for simulate key press
 
 // Credits to Ender-Studio for creating Keys+ V1 & 2
 (function (Scratch) {
@@ -212,7 +213,11 @@
             window.addEventListener("keydown", ({code, key}) => this.__handleKeyDown__(code, false, {code, key}));
             window.addEventListener("keyup", ({code}) => this.__handleKeyUp__(code));
             window.addEventListener("blur", () => {
-                if (this.clearOnBlur) this.keysPressed.clear();
+                if (this.clearOnBlur) {
+                    this.keysPressed.clear();
+                    this.totalKeysPressed = 0;
+                    this.currentKeyPressed = "None";
+                }
             });
         }
 
@@ -263,12 +268,20 @@
 
             const pressed = this.keysPressed.get(key);
 
+            if (!pressed) return;
+
             if (simulated) {
                 pressed.isSimulated = false;
                 if (pressed.isTrulyPressed) return;
             } else {
-                pressed.isTrulyPressed = false;
-                if (pressed.isSimulated) return;
+                try {
+                    pressed.isTrulyPressed = false;
+                    if (pressed.isSimulated) return;
+                } catch (e) {
+                    console.log(e)
+                    console.log(pressed)
+                    console.log(this.keysPressed)
+                }
             }
 
             this.timeSinceLastPress[key] = Date.now();
@@ -410,7 +423,9 @@
 
         //
         listKeysPressed() {
-            return [...this.keysPressed.keys()];
+            const list = [...this.keysPressed.keys()];
+            list.shift();
+            return list;
         }
 
         //
